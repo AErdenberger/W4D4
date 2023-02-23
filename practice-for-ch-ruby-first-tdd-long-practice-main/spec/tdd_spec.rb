@@ -20,11 +20,31 @@ describe "Array" do
             expect(sum_test.two_sum[0].is_a?(Array)).to eq(true)
         end
 
-        it "indices in resulting subarrays, map to elements in original array add to 0" do 
-            el_1 = sum_test.two_sum[0][0]
-            el_2 = sum_test.two_sum[0][1]
-            expect(sum_test[el_1] + sum_test[el_2] == 0).to eq(true)
+        #it this tests that the pair_1 adds up to 0
+        context "finds all pairs of positions where the elements at those positions sum to zero." do
+            it "indices in this pair, map to elements in original array add to 0" do 
+                el_1 = sum_test.two_sum[0][0]
+                el_2 = sum_test.two_sum[0][1]
+                expect(sum_test[el_1] + sum_test[el_2] == 0).to eq(true)
+            end
         end
-        #Array.new(2) {Array.new(2)}
+        
+        #this tests that pair_1 is ordered correctly
+        context "Each of the pairs should be sorted with the smaller index before the bigger index" do
+            it "first pair of :sum_test is ordered correctly" do
+                el_1 = sum_test.two_sum[0][0]
+                el_2 = sum_test.two_sum[0][1]
+                expect(el_1 < el_2).to eq(true)
+            end
+        end
+
+        #if the result array is ordered correctly
+        context "" do
+            it "" do
+                pair_1 = sum_test.two_sum[0]
+                pair_2 = sum_test.two_sum[1]
+                expect(pair_1[0] < pair_2[0]).to eq(true)
+            end
+        end
     end
 end
