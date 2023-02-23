@@ -16,6 +16,7 @@ describe "Array" do
 
     describe "two_sum" do 
         subject(:sum_test) {[-1, 0, 2, -2, 1]}
+        subject(:sum_test_2) {[-1, 0, 1, 1, 2]}
         it "returns a 2-D array" do 
             expect(sum_test.two_sum[0].is_a?(Array)).to eq(true)
         end
@@ -39,11 +40,17 @@ describe "Array" do
         end
 
         #if the result array is ordered correctly
-        context "" do
-            it "" do
+        context "result array ordered dictionary wise" do
+            it "puts smaller first elements first" do
                 pair_1 = sum_test.two_sum[0]
                 pair_2 = sum_test.two_sum[1]
                 expect(pair_1[0] < pair_2[0]).to eq(true)
+            end
+
+            it "if the first elements are equal, puts the smaller second elements first" do
+                pair_3 = sum_test_2.two_sum[0]
+                pair_4 = sum_test_2.two_sum[1]
+                expect(pair_3[1] < pair_4[1]).to eq(true)
             end
         end
     end
