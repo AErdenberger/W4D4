@@ -16,4 +16,16 @@ class Array
         res 
     end
     
+    def my_transpose
+        h = self.length
+        res = Array.new(h){Array.new(h)}
+
+        (0...h).each do |idx|
+            (0...h).each do |jdx|
+                res[idx][jdx] = self[jdx][idx]
+            end
+        end
+
+        res
+    end
 end

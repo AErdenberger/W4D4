@@ -54,4 +54,21 @@ describe "Array" do
             end
         end
     end
+
+    describe "my_transpose" do
+        subject (:original) {[
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8]
+        ]}
+        subject (:columns) {[
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8]
+        ]}
+
+        it "will convert between the row-oriented and column-oriented representations" do
+            expect(original.my_transpose).to eq(columns)
+        end
+    end
 end
