@@ -1,5 +1,13 @@
-#stocks.arr(300, 100, 200, 150, 0, 45) -> profit = buy price - sell price
-#stock_picker(arr) -> arr [day, day, day, day]
+#[150, 45, 78, 540, 720]
 
 def stock_picker(array)
+  #hash = Hash.new { |hash, k| hash[k] = [] }
+  hash = Hash.new
+  array.each_with_index do |day_1, i|
+    array.each_with_index do |day_2, j|
+      hash[(day_2 - day_1)] = [i, j] if i < j
+    end
+  end
+  max_profit = hash.keys.max
+  hash[max_profit]
 end
